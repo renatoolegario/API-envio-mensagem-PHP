@@ -20,6 +20,16 @@ $corpo_email        = $_POST['corpo_email'];
 
 $body               = file_get_contents($corpo_email);
 
+// aqui inicia-se as variávies do conteudo do anexo.
+
+
+// fim das variáveis 
+// Aqui inicia-se a substituição das variavies do anexo pelos POST recebidos.
+
+
+//Fim das substituições
+
+
 
 $mail = new PHPMailer(true);
 $mail->SetLanguage('br');
