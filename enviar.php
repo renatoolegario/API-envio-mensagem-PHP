@@ -16,7 +16,9 @@ $senha_email_disparo= $_POST['senha_email_disparo'];
 $nome_titulo_email  = $_POST['nome_titulo_email']; 
 
 $titulo_email       = $_POST['titulo_email']; 
-$corpo_email        = $_POST['corpo_email']; 
+$corpo_email        = $_POST['corpo_email'];
+$identificador_msg  = $_POST['codigo_identificador'];
+$url_webhook        = $_POST['url_webhook']; // será aqui que será enviado o disparo da desiscrição via cliente
 
 $body               = file_get_contents($corpo_email);
 
