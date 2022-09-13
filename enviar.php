@@ -19,7 +19,7 @@ $titulo_email       = $_POST['titulo_email'];
 $corpo_email        = $_POST['corpo_email'];
 $identificador_msg  = $_POST['codigo_identificador'];
 $url_webhook        = $_POST['url_webhook']; // será aqui que será enviado o disparo da desiscrição via cliente // O WEBHOOK DEVERÁ RECEBER VIA GET A VARIAVEL IDENTICACAO
-
+$url_webhook_cancelado= $url_webhook."?identificador=".$identificador_msg."&cancelar=1";
 $body               = file_get_contents($corpo_email);
 
 // aqui inicia-se as variávies do conteudo do anexo.
@@ -93,7 +93,7 @@ $body = str_replace('$$LINK_BANNER_BOTTOM$$',$LINK_BANNER_BOTTOM,$body);
 $body = str_replace('$$IMG_BANNER_BOTTOM$$',$IMG_BANNER_BOTTOM,$body);
 $body = str_replace('$$NOME_DA_EMPRESA$$',$NOME_DA_EMPRESA,$body);
 $body = str_replace('$$FRASE_DA_EMPRESA$$',$FRASE_DA_EMPRESA,$body);
-$body = str_replace('$$LINK-API-DESISCRICAO$$',$url_webhook,$body);
+$body = str_replace('$$LINK-API-DESISCRICAO$$',$url_webhook_cancelado,$body);
 
 
 //Fim das substituições
@@ -117,7 +117,7 @@ $mail->Subject = $titulo_email;
 $mail->Body = $body;        
         
        
-       	try {
+       			try {
 				$mail->send();
 				echo "Código enviado com sucesso.";
 			} catch (Exception $e) {
