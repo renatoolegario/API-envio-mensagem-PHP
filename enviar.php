@@ -23,6 +23,13 @@ $url_webhook_cancelado= $url_webhook."?identificador=".$identificador_msg."&canc
 $body               = file_get_contents($corpo_email);
 
 // aqui inicia-se as variávies do conteudo do anexo.
+$URL_TOPO					= $_POST['URL_TOPO'];					
+$URL_IMAGEM_BEIRADA_ESQUERDA			= $_POST['URL_IMAGEM_BEIRADA_ESQUERDA'];
+$URL_IMAGEM_BEIRADA_DIREITA			= $_POST['URL_IMAGEM_BEIRADA_DIREITA'];
+$TITULO_SUPERIOR				= $_POST['TITULO_SUPERIOR'];
+$SUB_TITULO_SUPERIOR				= $_POST['SUB_TITULO_SUPERIOR'];
+$DESCRICAO_SUB_TITULO_SUPERIOR			= $_POST['DESCRICAO_SUB_TITULO_SUPERIOR'];
+$DESCRICAO_DA_LISTAGEM_SUPERIOR			= $_POST['DESCRICAO_DA_LISTAGEM_SUPERIOR'];
 $ITEM_01_LISTAGEM 				= $_POST['ITEM_01_LISTAGEM'];
 $ITEM_02_LISTAGEM 				= $_POST['ITEM_02_LISTAGEM'];
 $ITEM_03_LISTAGEM 				= $_POST['ITEM_03_LISTAGEM'];
@@ -59,6 +66,9 @@ $FRASE_DA_EMPRESA 				= $_POST['FRASE_DA_EMPRESA'];
 
 // fim das variáveis 
 // Aqui inicia-se a substituição das variavies do anexo pelos POST recebidos.
+
+
+
 
 $body = str_replace('$$ITEM_01_LISTAGEM$$',$ITEM_01_LISTAGEM,$body);
 $body = str_replace('$$ITEM_02_LISTAGEM$$',$ITEM_02_LISTAGEM,$body);
