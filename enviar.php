@@ -119,9 +119,10 @@ $mail->Body = $body;
        
        			try {
 				$mail->send();
-				echo "Código enviado com sucesso.";
+				echo "{envio: 1, identificador: ".$identificador_msg."}";
 			} catch (Exception $e) {
-			    echo "Mailer error: " . $mail->ErrorInfo;
+			    //echo "Mailer error: " . $mail->ErrorInfo;
+			    echo "{envio: 0, identificador: ".$identificador_msg."}";
 			}
         
       
